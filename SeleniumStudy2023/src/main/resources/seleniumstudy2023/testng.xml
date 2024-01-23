@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="2" parallel="tests" name="seleniumstudy23Suite">
+  <test thread-count="2" parallel="tests" name="AlertAndAuthentication">
+    <classes>
+      <class name="Mislanious.AuthenticationpopupTest"/>
+      <class name="alertTest.AlertTest">
+     <methods>
+		 <include name="dismissAlert"/> 
+	 </methods>	 
+      </class>
+    </classes>
+  </test>
+  <test thread-count="2" parallel="tests" name="JaavascriptExecutorAndActions">
+    <classes>
+      <class name="actions_Interaction_Test.ActionTest"/>
+      <class name="javascriptExecutorTest.javascripexecutorsyntaxes">
+     <methods>
+		 <include name="ScrollToDown"/> 
+	 </methods>	
+	 <methods>
+		 <include name="SignInThePage"/> 
+	 </methods> 
+      </class>
+    </classes>
+  </test>  <!-- smoke -->
+</suite> <!-- seleniumstudy23Suite -->

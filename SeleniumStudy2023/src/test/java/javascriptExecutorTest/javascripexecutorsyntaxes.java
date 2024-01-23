@@ -14,6 +14,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import waitMechanism.ExplicitWait;
 
 public class javascripexecutorsyntaxes {
@@ -30,7 +31,7 @@ public class javascripexecutorsyntaxes {
 	@BeforeTest
 	public void setUp() {
 
-		System.setProperty("webdriver.chrome.driver","C:\\MyWorkspace\\SeleniumStudy2023\\resources\\driver\\chromedriver.exe");
+		WebDriverManager.chromedriver().driverVersion("120.0").setup();
 		driver = new ChromeDriver();
 		waittime = new ExplicitWait(driver);
 		driver.manage().window().maximize();

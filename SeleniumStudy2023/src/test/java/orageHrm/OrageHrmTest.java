@@ -21,9 +21,10 @@ public class OrageHrmTest {
   @Test
   public void orageHrmLoginTest()
   {
-	WebElement username= waitTime.getElementwithPolltime(driver, driver.findElement(By.xpath("//input[@name='username']")), 10, 1);
+	  
+	WebElement username= waitTime.getElementwithPolltime(driver, driver.findElement(By.xpath("//input[@name='username']")), 60, 5);
 	username.sendKeys("Admin");
-	WebElement password= waitTime.getElementwithPolltime(driver, driver.findElement(By.xpath("//input[@name='password']")), 10, 1);
+	WebElement password= waitTime.getElementwithPolltime(driver, driver.findElement(By.xpath("//input[@name='password']")), 60, 5);
 	password.sendKeys("admin123");
 	 waitTime.getElementwithPolltime(driver, driver.findElement(By.xpath("//button[@type='submit']")), 10, 1).click();
 	 Assert.assertEquals(driver.getTitle(), "OrangeHRM");
