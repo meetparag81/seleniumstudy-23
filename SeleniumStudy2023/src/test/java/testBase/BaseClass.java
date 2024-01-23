@@ -54,8 +54,7 @@ public class BaseClass
 			        ((ChromiumOptions<ChromeOptions>) options).setExperimentalOption("prefs", 
 			                new ImmutableMap.Builder<String, Object>()
 			                    .put("profile.default_content_setting_values.automatic_downloads", 1)
-			                    .put("download.prompt_for_download", false)
-			                    .build());
+			                    .put("download.prompt_for_download", false).build());
 					driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), options);
 					remotedriverflag=true;
 

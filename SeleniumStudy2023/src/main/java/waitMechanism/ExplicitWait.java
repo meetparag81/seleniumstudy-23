@@ -60,8 +60,7 @@ public class ExplicitWait {
 
 	}
 
-	public static WebElement getElementwithPolltime(WebDriver driver, WebElement element, long waittime,
-			long pollingtime) {
+	public static WebElement getElementwithPolltime(WebDriver driver, WebElement element, long waittime,long pollingtime) {
 		Wait<WebDriver> wait = new FluentWait<>(driver).withTimeout(Duration.ofSeconds(waittime))
 				.pollingEvery(Duration.ofSeconds(pollingtime)).ignoring(NoSuchElementException.class);
 		return wait.until(ExpectedConditions.elementToBeClickable(element));
