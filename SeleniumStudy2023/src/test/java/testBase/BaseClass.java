@@ -18,6 +18,8 @@ import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
+import com.google.common.collect.ImmutableMap;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseClass 
@@ -41,10 +43,19 @@ public class BaseClass
 					//options.setCapability("browserVersion", "120.0");
 					options.setCapability("platformName", "Windows");
 					options.setCapability("acceptInsecureCerts", true);
-					//options.setCapability("browsername", browsername);
 					options.setCapability("platformName", "Windows");
 					((ChromiumOptions<ChromeOptions>) options).addArguments("--disable-infobars");
 					((ChromiumOptions<ChromeOptions>) options).addArguments("--disable-notifications");
+					((ChromiumOptions<ChromeOptions>) options).addArguments("--disable-single-click-autofill");
+			        ((ChromiumOptions<ChromeOptions>) options).addArguments("--disable-popup-blocking");
+			        ((ChromiumOptions<ChromeOptions>) options).addArguments("--disable-infobars");
+			        ((ChromiumOptions<ChromeOptions>) options).addArguments("--disable-notifications");
+			        
+			        ((ChromiumOptions<ChromeOptions>) options).setExperimentalOption("prefs", 
+			                new ImmutableMap.Builder<String, Object>()
+			                    .put("profile.default_content_setting_values.automatic_downloads", 1)
+			                    .put("download.prompt_for_download", false)
+			                    .build());
 					driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), options);
 					remotedriverflag=true;
 
