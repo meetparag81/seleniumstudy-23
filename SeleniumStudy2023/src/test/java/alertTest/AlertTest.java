@@ -11,6 +11,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import ScrenshotMechanism.screenshotCreation;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class AlertTest {
 	private WebDriver driver;
@@ -22,7 +23,7 @@ public class AlertTest {
 
 	@BeforeMethod
 	public void beforeMethod() {
-		System.setProperty("webdriver.chrome.driver","C:\\MyWorkspace\\SeleniumStudy2023\\resources\\driver\\chromedriver.exe");
+		WebDriverManager.chromedriver().driverVersion("120.0").setup();
 		driver = new ChromeDriver();
 		driver.get("http://demo.guru99.com/test/delete_customer.php");
 		sc = new screenshotCreation(driver);
