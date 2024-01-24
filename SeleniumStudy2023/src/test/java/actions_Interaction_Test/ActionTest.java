@@ -1,6 +1,7 @@
 package actions_Interaction_Test;
 
 import java.time.Duration;
+import java.util.List;
 import java.util.Set;
 
 import org.openqa.selenium.By;
@@ -37,6 +38,37 @@ public class ActionTest {
 		driver.get("http://omayo.blogspot.com");
 		driver.manage().window().maximize();
 	}
+	// SendText in capitalLetter
+		@Test(priority=1)
+		public void SendTheStringInCapitalLetterExisting() throws InterruptedException{
+			
+			 act = new Actions(driver);
+			Thread.sleep(4000);
+			WebElement inputelement = driver.findElement(By.xpath("//textarea[@id='ta1']"));
+			js.executeScript("arguments[0].scrollIntoView(true);", inputelement);
+			js.executeScript("arguments[0].setAttribute('style', 'border:4x Red;background:yellow');", inputelement);		
+			Thread.sleep(2000);
+			act.click(inputelement);
+			Thread.sleep(2000);
+			act.keyDown(inputelement,Keys.SHIFT).sendKeys("Test").build().perform();
+			js.executeScript("arguments[0].setAttribute('style', 'border:;background:');", inputelement);
+			/*act.keyDown(inputelement,Keys.SHIFT).sendKeys("InCapitalletter").perform();
+			act.keyUp(Keys.SHIFT).build().perform();*/
+			Thread.sleep(2000);
+				
+				}
+		//ClickMultiplecheckboxusingKysDown
+		@Test(priority=2)
+		public void ClikOnMulitpleRasidbuttonsUsingKysDown(){
+			List<WebElement> radiobuttons = driver.findElements(By.xpath("//input[@name='gender']"));
+			for(WebElement element:radiobuttons){
+				js.executeScript("arguments[0].scrollIntoView(true);", element);
+				js.executeScript("arguments[0].setAttribute('style', 'border:4x Red;background:yellow');", element);
+				act.keyDown(Keys.CONTROL).click(element);
+				act.keyUp(element, Keys.CONTROL);
+			}
+				
+			}
 	//drag and drop
 	@Test(priority=1,enabled=true)
 	public void DragElemetFromSurceToDestination() throws InterruptedException 

@@ -21,6 +21,7 @@ public class javascripexecutorsyntaxes {
 	WebDriver driver;
 	private JavascriptExecutor js;
 	private ExplicitWait waittime;
+	private String title;
 
 	/*
 	 * public javascripexecutorsyntaxes(WebDriver _driver) { this.driver = _driver;
@@ -43,11 +44,31 @@ public class javascripexecutorsyntaxes {
 	}
 
 	// get title of a page using executor
-	@Test(enabled = false)
+	@Test(enabled = true)
 	public void GetTitleofPage() {
 
-		String title = js.executeScript("return document.title;").toString();
+		 title = js.executeScript("return document.title;").toString();
 		Assert.assertEquals(title, "Yahoo Search - Web Search");
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		String title = (String) js.executeScript("return document.title;");
+		Assert.assertEquals(title, "Yahoo Search - Web Search");
+
+
+	}
+	@Test(enabled = true)
+	public void getURLUsingJsExecutor() {
+		//correct syntax
+		String currentUrl = (String) js.executeScript("return document.URL");
+		if(currentUrl.equals(driver.getCurrentUrl())) {
+			Assert.assertTrue(true);
+		}
+//incorrect syntax
+		String URL1 = js.executeScript("return document .URL").toString();
+		//String URL2= js.executeScript().toString(documentURL);
+		//String URL3= js.executeScript(return document URL;).toString();
+		
+		
+
 
 	}
 
@@ -62,43 +83,95 @@ public class javascripexecutorsyntaxes {
 
 	// send the input//backgroundcolor
 	@Test(priority = 1, enabled = true)
-	public void SignInThePage() throws InterruptedException {
+	public void BackgroundcolorSecondtext() throws InterruptedException {
 
 		WebElement emailIcon = waittime.waitforclickable(driver, 30,driver.findElement((By.xpath(("//a[@id='ymail']")))));
 		js.executeScript("arguments[0].click();", emailIcon);
 		WebElement signinButton = waittime.waitforclickable(driver, 30,	driver.findElement((By.xpath(("//a[text()='Sign in']")))));
 		js.executeScript("arguments[0].click()", signinButton);
 		WebElement userName = waittime.waitforclickable(driver, 30, driver.findElement((By.name("username"))));
+		String orignalstyleusename = userName.getAttribute("style");
+		//backgroundcolorby Firstway
+		Thread.sleep(5000);
+		js.executeScript("arguments[0].setAttribute('style','background:yellow; border:2px solid red;');", userName);
+		// send the input
 		js.executeScript("arguments[0].value='paragborawake81';", userName);
+		Thread.sleep(5000);
+		js.executeScript("arguments[0].setAttribute('style','" + orignalstyleusename + "');", userName);
+		
 		WebElement Next = waittime.waitforclickable(driver, 30,driver.findElement(By.xpath("//input[@name='signin']")));
-		String orignalstyle = Next.getAttribute("style");
-		Thread.sleep(3000);
-		//backgroundcolor
-		js.executeScript("arguments[0].setAttribute('style','background:yellow; border:2px solid red;');", Next);
-		Thread.sleep(3000);
-		js.executeScript("arguments[0].setAttribute('style','" + orignalstyle + "');", Next);
+		String orignalstyleNext = Next.getAttribute("style");
+		Thread.sleep(5000);
+		//backgroundcolorby secondway		
+		js.executeScript("arguments[0].style.backgroundColor = 'yellow'; arguments[0].style.border = '2px solid red';", Next);
+		
+		Thread.sleep(5000);
+		js.executeScript("arguments[0].setAttribute('style','" + orignalstyleNext + "');", Next);
 		js.executeScript("arguments[0].click();", Next);
 
 	}
+	//get text
+	@Test(priority = 1, enabled = true)
+	public void getTextOfAnElement() throws InterruptedException 
+	{
+	System.out.println();
+	
+	WebElement webelement = waittime.getElementwithPolltime(driver, driver.findElement(By.xpath("//*[contains(text(),'Cricket')]")), 30, 5);
+	String text = (String) js.executeScript("return arguments[0].textContent;", webelement);
+	String text1 = (String) js.executeScript("return arguments[0].text;", webelement);
+
+	}
+	
+	// send the input//backgroundcolor
+		@Test(priority = 1, enabled = true)
+		public void SignInThePage() throws InterruptedException {
+
+			WebElement emailIcon = waittime.waitforclickable(driver, 30,driver.findElement((By.xpath(("//a[@id='ymail']")))));
+			js.executeScript("arguments[0].click();", emailIcon);
+			WebElement signinButton = waittime.waitforclickable(driver, 30,	driver.findElement((By.xpath(("//a[text()='Sign in']")))));
+			js.executeScript("arguments[0].click()", signinButton);
+			WebElement userName = waittime.waitforclickable(driver, 30, driver.findElement((By.name("username"))));
+			js.executeScript("arguments[0].value='paragborawake81';", userName);
+			WebElement Next = waittime.waitforclickable(driver, 30,driver.findElement(By.xpath("//input[@name='signin']")));
+			String orignalstyle = Next.getAttribute("style");
+			Thread.sleep(3000);
+			//backgroundcolor
+			js.executeScript("arguments[0].setAttribute('style','background:yellow; border:2px solid red;');", Next);
+			Thread.sleep(3000);
+			js.executeScript("arguments[0].setAttribute('style','" + orignalstyle + "');", Next);
+			js.executeScript("arguments[0].click();", Next);
+
+		}
 //scrollintoViewOrScrollUptoElement
 	@Test(priority = 2, enabled = true)
-	public void ScrollToDown() throws InterruptedException {
+	public void ScrollUpToElement() throws InterruptedException {
 		driver.switchTo().newWindow(WindowType.TAB);
 		driver.get("https://jqueryui.com/");
 		js.executeScript("window.scrollBy(0, 250);");
 		Thread.sleep(3000);
-		js.executeScript("window.scrollTo(0,-document.body.scrollHeight)");
-		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+		js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
+		js.executeScript("window.scrollTo(0, -document.body.scrollHeight)");
 
 		String firstWindow = driver.getWindowHandles().iterator().next();
 		driver.switchTo().window(firstWindow);
 		WebElement help = waittime.waitforclickable(driver, 30,	driver.findElement((By.xpath("(//a[text()='Help'][contains(@href,'https')])[2]"))));
 		js.executeScript("arguments[0].scrollIntoView();", help);
-
+		js.executeScript("arguments[0].setAttribute('style','background:yellow; border:2px solid red;');", help);
 		String Actual = js.executeScript("return document.title;").toString();
 		Assert.assertEquals(Actual, "Yahoo Search - Web Search");
 
 	}
+	//scrollbottom and top
+		@Test(priority = 3, enabled = true)
+		public void ScrollBottomAndTop() throws InterruptedException {
+			driver.switchTo().newWindow(WindowType.TAB);
+			driver.get("https://jqueryui.com/");
+			js.executeScript("window.scrollBy(0, 250);");
+			Thread.sleep(3000);
+			js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
+			js.executeScript("window.scrollTo(0, -document.body.scrollHeight)");	
+
+		}
 
 	@Test(priority = 3, enabled = true)
 	public void ScrollToUp() {
@@ -125,7 +198,7 @@ public class javascripexecutorsyntaxes {
 
 	@AfterTest
 	public void TearDown() {
-		driver.close();
+		driver.quit();
 	}
 
 }

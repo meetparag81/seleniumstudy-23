@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test(failed)">
     <classes>
-      <class name="orageHrm.OrageHrmTest">
+      <class name="javascriptExecutorTest.javascripexecutorsyntaxes">
         <methods>
-          <include name="orageHrmLoginTest"/>
-          <include name="afterMethod"/>
-          <include name="beforeMethod"/>
+          <include name="getTextOfAnElement"/>
+          <include name="setUp"/>
+          <include name="TearDown"/>
         </methods>
-      </class> <!-- orageHrm.OrageHrmTest -->
+      </class> <!-- javascriptExecutorTest.javascripexecutorsyntaxes -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
