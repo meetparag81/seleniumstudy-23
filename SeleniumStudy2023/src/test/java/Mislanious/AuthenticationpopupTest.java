@@ -1,5 +1,7 @@
 package Mislanious;
 
+import java.io.IOException;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -7,10 +9,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import ScrenshotMechanism.screenshotCreation;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import waitMechanism.ExplicitWait;
 
@@ -19,6 +23,7 @@ public class AuthenticationpopupTest {
 	private ExplicitWait waitTime;
 	private Actions act;
 	private JavascriptExecutor js;
+	private screenshotCreation sc;
   
   @BeforeMethod
   public void beforeMethod() 
@@ -28,6 +33,7 @@ public class AuthenticationpopupTest {
 		act = new Actions(driver);
 		js = (JavascriptExecutor) driver;
 		waitTime = new ExplicitWait(driver);
+		sc=new screenshotCreation(driver);
 		driver.get("https://the-internet.herokuapp.com/basic_auth");
 		driver.manage().window().maximize();
 	  
@@ -46,9 +52,19 @@ public class AuthenticationpopupTest {
   }
 
   @AfterMethod
-  public void afterMethod() 
-  {
-	  driver.quit();
-  }
+	public void tearDown(ITestResult result) throws IOException 
+	{
+		String status="";
+		String methodName = result.getMethod().getMethodName();
+		int statuscount= result.getStatus();
+		if(statuscount==1) {
+			status="passed";
+		}
+		else if (statuscount==0) {
+			status="failed";
+		}
+		sc.takeScreenshot(driver, methodName, status);
+		driver.quit();		
 
+	}
 }
