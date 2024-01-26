@@ -1,5 +1,6 @@
 package javascriptExecutorTest;
 
+import java.io.IOException;
 import java.time.Duration;
 import java.util.Set;
 
@@ -10,10 +11,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import ScrenshotMechanism.screenshotCreation;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import waitMechanism.ExplicitWait;
 
@@ -22,6 +25,7 @@ public class javascripexecutorsyntaxes {
 	private JavascriptExecutor js;
 	private ExplicitWait waittime;
 	private String title;
+	private screenshotCreation sc;
 
 	/*
 	 * public javascripexecutorsyntaxes(WebDriver _driver) { this.driver = _driver;
@@ -38,6 +42,7 @@ public class javascripexecutorsyntaxes {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		js = (JavascriptExecutor) driver;
+		sc=new screenshotCreation(driver);
 		// open url using javascriptexecutor
 		js.executeScript("window.location.href='https://in.search.yahoo.com/?fr2=inr';");
 
@@ -144,7 +149,7 @@ public class javascripexecutorsyntaxes {
 		}
 //scrollintoViewOrScrollUptoElement
 	@Test(priority = 2, enabled = true)
-	public void ScrollUpToElement() throws InterruptedException {
+	public void ScrollToTop() throws InterruptedException {
 		driver.switchTo().newWindow(WindowType.TAB);
 		driver.get("https://jqueryui.com/");
 		js.executeScript("window.scrollBy(0, 250);");
@@ -155,7 +160,9 @@ public class javascripexecutorsyntaxes {
 		String firstWindow = driver.getWindowHandles().iterator().next();
 		driver.switchTo().window(firstWindow);
 		WebElement help = waittime.waitforclickable(driver, 30,	driver.findElement((By.xpath("(//a[text()='Help'][contains(@href,'https')])[2]"))));
+		Thread.sleep(3000);
 		js.executeScript("arguments[0].scrollIntoView();", help);
+		Thread.sleep(3000);
 		js.executeScript("arguments[0].setAttribute('style','background:yellow; border:2px solid red;');", help);
 		String Actual = js.executeScript("return document.title;").toString();
 		Assert.assertEquals(Actual, "Yahoo Search - Web Search");
@@ -196,9 +203,20 @@ public class javascripexecutorsyntaxes {
 
 	}
 
-	@AfterTest
-	public void TearDown() {
-		driver.quit();
+	@AfterMethod
+	public void TearDown(ITestResult result) throws IOException {
+		String status="";
+		String methodName = result.getMethod().getMethodName();
+		int statuscount= result.getStatus();
+		if(statuscount==1) {
+			status="passed";
+		}
+		else if (statuscount==0) {
+			status="failed";
+		}
+		sc.takeScreenshot(driver, methodName, status);
+		driver.quit();		
+
 	}
 
 }
