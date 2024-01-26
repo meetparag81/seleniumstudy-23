@@ -55,19 +55,19 @@ public class javascripexecutorsyntaxes {
 
 
 	}
+	//get URL
 	@Test(enabled = true)
 	public void getURLUsingJsExecutor() {
-		//correct syntax
+		//correct syntax1
 		String currentUrl = (String) js.executeScript("return document.URL");
 		if(currentUrl.equals(driver.getCurrentUrl())) {
 			Assert.assertTrue(true);
 		}
-//incorrect syntax
+//Correct syntax2
 		String URL1 = js.executeScript("return document .URL").toString();
 		//String URL2= js.executeScript().toString(documentURL);
 		//String URL3= js.executeScript(return document URL;).toString();
-		
-		
+		Assert.assertEquals(currentUrl, URL1);		
 
 
 	}
