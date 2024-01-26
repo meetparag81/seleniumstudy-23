@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="10" total="11" passed="1" failed="0" skipped="0">
+<testng-results ignored="9" total="10" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-01-24T18:28:05Z" name="Default suite" finished-at="2024-01-24T18:28:53Z" duration-ms="48132">
+  <suite started-at="2024-01-26T03:48:03Z" name="Default suite" finished-at="2024-01-26T03:48:31Z" duration-ms="28313">
     <groups>
     </groups>
-    <test started-at="2024-01-24T18:28:05Z" name="Default test" finished-at="2024-01-24T18:28:53Z" duration-ms="48132">
-      <class name="actions_Interaction_Test.ActionTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:actions_Interaction_Test.ActionTest@4f5991f6]" started-at="2024-01-24T23:58:05Z" name="setUp" finished-at="2024-01-24T23:58:10Z" duration-ms="5323" status="PASS">
+    <test started-at="2024-01-26T03:48:03Z" name="Default test" finished-at="2024-01-26T03:48:31Z" duration-ms="28313">
+      <class name="javascriptExecutorTest.javascripexecutorsyntaxes">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:javascriptExecutorTest.javascripexecutorsyntaxes@598bd2ba]" started-at="2024-01-26T09:18:03Z" name="setUp" finished-at="2024-01-26T09:18:14Z" duration-ms="11405" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="ClikOnMulitpleRasidbuttonsUsingKysDown()[pri:2, instance:actions_Interaction_Test.ActionTest@4f5991f6]" started-at="2024-01-24T23:58:10Z" name="ClikOnMulitpleRasidbuttonsUsingKysDown" finished-at="2024-01-24T23:58:53Z" duration-ms="42468" status="PASS">
+        <test-method signature="getURLUsingJsExecutor()[pri:0, instance:javascriptExecutorTest.javascripexecutorsyntaxes@598bd2ba]" started-at="2024-01-26T09:18:14Z" name="getURLUsingJsExecutor" finished-at="2024-01-26T09:18:30Z" duration-ms="15962" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ClikOnMulitpleRasidbuttonsUsingKysDown -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:actions_Interaction_Test.ActionTest@4f5991f6]" started-at="2024-01-24T23:58:53Z" name="afterMethod" finished-at="2024-01-24T23:58:53Z" duration-ms="320" status="PASS">
+        </test-method> <!-- getURLUsingJsExecutor -->
+        <test-method is-config="true" signature="TearDown()[pri:0, instance:javascriptExecutorTest.javascripexecutorsyntaxes@598bd2ba]" started-at="2024-01-26T09:18:30Z" name="TearDown" finished-at="2024-01-26T09:18:31Z" duration-ms="865" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- afterMethod -->
-      </class> <!-- actions_Interaction_Test.ActionTest -->
+        </test-method> <!-- TearDown -->
+      </class> <!-- javascriptExecutorTest.javascripexecutorsyntaxes -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

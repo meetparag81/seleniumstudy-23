@@ -53,6 +53,41 @@ public class ActionTestNew {
           js.executeScript("arguments[0].setAttribute('style','" + orignalstyle + "');", osloBox);
 		
 	}
+	//dragdropwithdiffrentcommands
+	@Test(priority=1,enabled=true)
+	public void Draganddropbydiffrencommands() throws InterruptedException 
+	{
+		driver.navigate().to("http://dhtmlgoodies.com/scripts/drag-drop-custom/demo-drag-drop-3.html");
+		WebElement src = driver.findElement(By.id("box1"));
+		String orignalstyle = src.getAttribute("style");
+		//js.executeScript("arguments[0].setAttribute('style','background:yellow;,border:2px solid red;');",  searchBoxField);
+		js.executeScript("arguments[0].setAttribute('style','background:yellow;,border:2px solid red;');", src);
+          WebElement des = driver.findElement(By.id("box101"));
+          act.click().clickAndHold(src).build().perform();
+          act.moveToElement(des).build().perform();
+  		act.release(des).build().perform();          
+          js.executeScript("arguments[0].setAttribute('style','" + orignalstyle + "');", des);
+		
+	}
+	
+	
+	//double click
+	@Test
+	public void DoubleclickTest() throws InterruptedException{
+		Thread.sleep(4000);
+		WebElement element =  driver.findElement(By.xpath("//*[contains(text(),'Double click Here')]"));
+		js.executeScript("arguments[].setAttribute('bacground:yellow;,border:2px solid red;');", element);		
+		
+		Thread.sleep(2000);
+		element.sendKeys("arun");
+			Thread.sleep(4000);
+			//act.doubleClick().perform();;
+			act.doubleClick(element).perform();
+			Thread.sleep(4000);
+			
+			}
+	
+	
 	//ContextOrRightClick
 	@Test(priority=2,enabled=false)
 	public void context_Or_RighClick() throws InterruptedException
