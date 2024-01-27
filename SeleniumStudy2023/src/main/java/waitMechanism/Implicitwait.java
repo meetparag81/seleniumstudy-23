@@ -13,7 +13,7 @@ public class Implicitwait {
 
 	}
 
-	public void staticwait(long input) throws InterruptedException {
+	public void UnconditionalWaitThreadSleep(long input) throws InterruptedException {
 		Thread.sleep(input);
 
 	}
@@ -21,6 +21,9 @@ public class Implicitwait {
 	public void implicitWait(long waittime) {
 
 		_driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(waittime));
+	}
+	public void UnconditionalWait_Wait() throws InterruptedException {
+		wait();
 	}
 
 }

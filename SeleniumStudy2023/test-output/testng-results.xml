@@ -1,32 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="9" total="10" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-01-26T18:06:36Z" name="Default suite" finished-at="2024-01-26T18:07:51Z" duration-ms="75273">
+  <suite started-at="2024-01-27T19:04:58Z" name="Default suite" finished-at="2024-01-27T19:05:26Z" duration-ms="28209">
     <groups>
     </groups>
-    <test started-at="2024-01-26T18:06:36Z" name="Default test" finished-at="2024-01-26T18:07:51Z" duration-ms="75273">
-      <class name="javascriptExecutorTest.javascripexecutorsyntaxes">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:javascriptExecutorTest.javascripexecutorsyntaxes@5a2d131d]" started-at="2024-01-26T23:36:36Z" name="setUp" finished-at="2024-01-26T23:36:42Z" duration-ms="6516" status="PASS">
+    <test started-at="2024-01-27T19:04:58Z" name="Default test" finished-at="2024-01-27T19:05:26Z" duration-ms="28209">
+      <class name="qa.FlashObject.FlashObjectTest">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:qa.FlashObject.FlashObjectTest@3fed2870]" started-at="2024-01-28T00:34:58Z" name="beforeMethod" finished-at="2024-01-28T00:35:11Z" duration-ms="13585" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="ScrollToTop()[pri:2, instance:javascriptExecutorTest.javascripexecutorsyntaxes@5a2d131d]" started-at="2024-01-26T23:36:42Z" name="ScrollToTop" finished-at="2024-01-26T23:36:53Z" duration-ms="10440" status="PASS">
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="Guru99FlashobjectTest()[pri:0, instance:qa.FlashObject.FlashObjectTest@3fed2870]" started-at="2024-01-28T00:35:11Z" name="Guru99FlashobjectTest" finished-at="2024-01-28T00:35:26Z" duration-ms="14276" status="FAIL">
+          <exception class="org.openqa.selenium.JavascriptException">
+            <message>
+              <![CDATA[javascript error: document.myFlashMovie.Play is not a function
+  (Session info: chrome=121.0.6167.85)
+Build info: version: '4.15.0', revision: '1d14b5521b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [14439922aea5580bc6f1d12d0c5894b1, executeScript {script=return document.myFlashMovie.Play();, args=[]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 121.0.6167.85, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\V-PBOR~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54187}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54187/devtoo..., se:cdpVersion: 121.0.6167.85, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 14439922aea5580bc6f1d12d0c5894b1]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.JavascriptException: javascript error: document.myFlashMovie.Play is not a function
+  (Session info: chrome=121.0.6167.85)
+Build info: version: '4.15.0', revision: '1d14b5521b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [14439922aea5580bc6f1d12d0c5894b1, executeScript {script=return document.myFlashMovie.Play();, args=[]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 121.0.6167.85, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\V-PBOR~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54187}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54187/devtoo..., se:cdpVersion: 121.0.6167.85, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 14439922aea5580bc6f1d12d0c5894b1
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:607)
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:472)
+	at Flash.FlashObjectWebDriver.callFlashObject(FlashObjectWebDriver.java:25)
+	at qa.FlashObject.FlashObjectTest.Guru99FlashobjectTest(FlashObjectTest.java:42)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.JavascriptException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ScrollToTop -->
-        <test-method is-config="true" signature="TearDown(org.testng.ITestResult)[pri:0, instance:javascriptExecutorTest.javascripexecutorsyntaxes@5a2d131d]" started-at="2024-01-26T23:36:53Z" name="TearDown" finished-at="2024-01-26T23:37:51Z" duration-ms="58293" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=ScrollToTop status=SUCCESS method=javascripexecutorsyntaxes.ScrollToTop()[pri:2, instance:javascriptExecutorTest.javascripexecutorsyntaxes@5a2d131d] output={null}]]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- Guru99FlashobjectTest -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:qa.FlashObject.FlashObjectTest@3fed2870]" started-at="2024-01-28T00:35:26Z" name="afterMethod" finished-at="2024-01-28T00:35:26Z" duration-ms="303" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TearDown -->
-      </class> <!-- javascriptExecutorTest.javascripexecutorsyntaxes -->
+        </test-method> <!-- afterMethod -->
+      </class> <!-- qa.FlashObject.FlashObjectTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
