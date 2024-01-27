@@ -188,19 +188,7 @@ public class ActionTestNew {
 
 
 	}
-	//open link using keyboard action
-	@Test(priority=9,enabled=false)
-	public void hoverWaitAndClick() throws InterruptedException {
-		WebElement Element = driver.findElement(By.name("q"));
-		js.executeScript("arguments[0].setAttribute('style', 'background:yellow;border:6px solid red;');", Element);
-		// Create an instance of the Actions class
-		
-
-		// Move the mouse cursor to the element and click on it in one chain
-		act.moveToElement(Element).pause(20).click().build().perform();
-		act.moveToElement(Element).pause(20).keyDown(Element, Keys.SHIFT).sendKeys("capital").keyUp(Keys.SHIFT).build().perform();
-
-	}
+	//SendText in capitalLetter
 	@Test(priority=10,enabled=true)
 	public void driverSendKeysCapital() throws InterruptedException {
 		WebElement Element = driver.findElement(By.name("q"));
@@ -217,6 +205,20 @@ public class ActionTestNew {
 		// driver.findElements(By.name("q")).sendKeys(Keys.CTRL,"capital");
 
 	}
+	//open link using keyboard action
+	@Test(priority=9,enabled=false)
+	public void hoverWaitAndClick() throws InterruptedException {
+		WebElement Element = driver.findElement(By.name("q"));
+		js.executeScript("arguments[0].setAttribute('style', 'background:yellow;border:6px solid red;');", Element);
+		// Create an instance of the Actions class
+		
+
+		// Move the mouse cursor to the element and click on it in one chain
+		act.moveToElement(Element).pause(20).click().build().perform();
+		act.moveToElement(Element).pause(20).keyDown(Element, Keys.SHIFT).sendKeys("capital").keyUp(Keys.SHIFT).build().perform();
+
+	}
+	
 
 	@Test(priority=8,enabled=false)
 	public void openLinkUsingControlkey() throws InterruptedException {
