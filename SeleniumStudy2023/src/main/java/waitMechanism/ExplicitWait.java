@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -65,5 +66,16 @@ public class ExplicitWait {
 				.pollingEvery(Duration.ofSeconds(pollingtime)).ignoring(NoSuchElementException.class);
 		return wait.until(ExpectedConditions.elementToBeClickable(element));
 	}
+	public  boolean isStale(WebElement element) {
+	    try {
+	        element.isEnabled();
+	        return false;
+	    } 
+	    catch (StaleElementReferenceException sere) 
+	    {
+	        return true;
+	    }
+	}
+
 
 }

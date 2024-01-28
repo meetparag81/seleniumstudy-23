@@ -4,6 +4,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
 
+import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.chromium.ChromiumOptions;
@@ -42,7 +43,9 @@ public class BaseClass
 				 options = new ChromeOptions();
 					//options.setCapability("browserVersion", "120.0");
 					options.setCapability("platformName", "Windows");
-					options.setCapability("acceptInsecureCerts", true);
+					//options.setCapability("acceptInsecureCerts", true);
+					options.setAcceptInsecureCerts(true);
+				    options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
 					options.setCapability("platformName", "Windows");
 					((ChromiumOptions<ChromeOptions>) options).addArguments("--disable-infobars");
 					((ChromiumOptions<ChromeOptions>) options).addArguments("--disable-notifications");

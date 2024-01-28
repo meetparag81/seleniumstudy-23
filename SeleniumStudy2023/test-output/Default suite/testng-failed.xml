@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test(failed)">
     <classes>
-      <class name="windowHandleTest.HandleWindowTest">
+      <class name="qa.DesiredCapabilities.DesireCapabilitiesTest">
         <methods>
-          <include name="hadleWindows"/>
+          <include name="operaBrowsercapabilitiesTest"/>
           <include name="afterMethod"/>
           <include name="beforeMethod"/>
         </methods>
-      </class> <!-- windowHandleTest.HandleWindowTest -->
+      </class> <!-- qa.DesiredCapabilities.DesireCapabilitiesTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
