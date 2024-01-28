@@ -166,5 +166,7 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="resources/Library"/>
+	<classpathentry kind="lib" path="resources/Library/Flash-v1.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

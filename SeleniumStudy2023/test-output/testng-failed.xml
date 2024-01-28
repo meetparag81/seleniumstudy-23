@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="2" parallel="tests" name="Failed suite [seleniumstudy23Suite]" guice-stage="DEVELOPMENT">
-  <test parallel="tests" name="JaavascriptExecutorAndActions(failed)">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test name="Default test(failed)">
     <classes>
-      <class name="javascriptExecutorTest.javascripexecutorsyntaxes">
+      <class name="windowHandleTest.HandleWindowTest">
         <methods>
-          <include name="setUp"/>
-          <include name="SignInThePage"/>
-          <include name="TearDown"/>
+          <include name="hadleWindows"/>
+          <include name="afterMethod"/>
+          <include name="beforeMethod"/>
         </methods>
-      </class> <!-- javascriptExecutorTest.javascripexecutorsyntaxes -->
+      </class> <!-- windowHandleTest.HandleWindowTest -->
     </classes>
-  </test> <!-- JaavascriptExecutorAndActions(failed) -->
-</suite> <!-- Failed suite [seleniumstudy23Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

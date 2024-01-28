@@ -53,6 +53,41 @@ public class ActionTestNew {
           js.executeScript("arguments[0].setAttribute('style','" + orignalstyle + "');", osloBox);
 		
 	}
+	//dragdropwithdiffrentcommands
+	@Test(priority=1,enabled=true)
+	public void Draganddropbydiffrencommands() throws InterruptedException 
+	{
+		driver.navigate().to("http://dhtmlgoodies.com/scripts/drag-drop-custom/demo-drag-drop-3.html");
+		WebElement src = driver.findElement(By.id("box1"));
+		String orignalstyle = src.getAttribute("style");
+		//js.executeScript("arguments[0].setAttribute('style','background:yellow;,border:2px solid red;');",  searchBoxField);
+		js.executeScript("arguments[0].setAttribute('style','background:yellow;,border:2px solid red;');", src);
+          WebElement des = driver.findElement(By.id("box101"));
+          act.click().clickAndHold(src).build().perform();
+          act.moveToElement(des).build().perform();
+  		act.release(des).build().perform();          
+          js.executeScript("arguments[0].setAttribute('style','" + orignalstyle + "');", des);
+		
+	}
+	
+	
+	//double click
+	@Test
+	public void DoubleclickTest() throws InterruptedException{
+		Thread.sleep(4000);
+		WebElement element =  driver.findElement(By.xpath("//*[contains(text(),'Double click Here')]"));
+		js.executeScript("arguments[].setAttribute('bacground:yellow;,border:2px solid red;');", element);		
+		
+		Thread.sleep(2000);
+		element.sendKeys("arun");
+			Thread.sleep(4000);
+			//act.doubleClick().perform();;
+			act.doubleClick(element).perform();
+			Thread.sleep(4000);
+			
+			}
+	
+	
 	//ContextOrRightClick
 	@Test(priority=2,enabled=false)
 	public void context_Or_RighClick() throws InterruptedException
@@ -153,19 +188,7 @@ public class ActionTestNew {
 
 
 	}
-	//open link using keyboard action
-	@Test(priority=9,enabled=false)
-	public void hoverWaitAndClick() throws InterruptedException {
-		WebElement Element = driver.findElement(By.name("q"));
-		js.executeScript("arguments[0].setAttribute('style', 'background:yellow;border:6px solid red;');", Element);
-		// Create an instance of the Actions class
-		
-
-		// Move the mouse cursor to the element and click on it in one chain
-		act.moveToElement(Element).pause(20).click().build().perform();
-		act.moveToElement(Element).pause(20).keyDown(Element, Keys.SHIFT).sendKeys("capital").keyUp(Keys.SHIFT).build().perform();
-
-	}
+	//SendText in capitalLetter
 	@Test(priority=10,enabled=true)
 	public void driverSendKeysCapital() throws InterruptedException {
 		WebElement Element = driver.findElement(By.name("q"));
@@ -182,6 +205,20 @@ public class ActionTestNew {
 		// driver.findElements(By.name("q")).sendKeys(Keys.CTRL,"capital");
 
 	}
+	//open link using keyboard action
+	@Test(priority=9,enabled=false)
+	public void hoverWaitAndClick() throws InterruptedException {
+		WebElement Element = driver.findElement(By.name("q"));
+		js.executeScript("arguments[0].setAttribute('style', 'background:yellow;border:6px solid red;');", Element);
+		// Create an instance of the Actions class
+		
+
+		// Move the mouse cursor to the element and click on it in one chain
+		act.moveToElement(Element).pause(20).click().build().perform();
+		act.moveToElement(Element).pause(20).keyDown(Element, Keys.SHIFT).sendKeys("capital").keyUp(Keys.SHIFT).build().perform();
+
+	}
+	
 
 	@Test(priority=8,enabled=false)
 	public void openLinkUsingControlkey() throws InterruptedException {

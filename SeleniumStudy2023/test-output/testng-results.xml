@@ -1,107 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="15" total="21" passed="5" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-01-24T16:04:34Z" name="seleniumstudy23Suite" finished-at="2024-01-24T16:06:30Z" duration-ms="116131">
-    <groups>
-    </groups>
-    <test started-at="2024-01-24T16:04:34Z" name="AlertAndAuthentication" finished-at="2024-01-24T16:05:29Z" duration-ms="54641">
-      <class name="alertTest.AlertTest">
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:alertTest.AlertTest@1b919693]" started-at="2024-01-24T21:34:58Z" name="beforeMethod" finished-at="2024-01-24T21:35:17Z" duration-ms="18285" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="dismissAlert()[pri:3, instance:alertTest.AlertTest@1b919693]" started-at="2024-01-24T21:35:17Z" name="dismissAlert" finished-at="2024-01-24T21:35:27Z" duration-ms="10365" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- dismissAlert -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:alertTest.AlertTest@1b919693]" started-at="2024-01-24T21:35:27Z" name="afterMethod" finished-at="2024-01-24T21:35:29Z" duration-ms="1673" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-      </class> <!-- alertTest.AlertTest -->
-      <class name="Mislanious.AuthenticationpopupTest">
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:Mislanious.AuthenticationpopupTest@1807f5a7]" started-at="2024-01-24T21:34:34Z" name="beforeMethod" finished-at="2024-01-24T21:34:52Z" duration-ms="18035" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="authenticationPopupTest()[pri:0, instance:Mislanious.AuthenticationpopupTest@1807f5a7]" started-at="2024-01-24T21:34:52Z" name="authenticationPopupTest" finished-at="2024-01-24T21:34:57Z" duration-ms="5384" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- authenticationPopupTest -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Mislanious.AuthenticationpopupTest@1807f5a7]" started-at="2024-01-24T21:34:57Z" name="afterMethod" finished-at="2024-01-24T21:34:58Z" duration-ms="857" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-      </class> <!-- Mislanious.AuthenticationpopupTest -->
-    </test> <!-- AlertAndAuthentication -->
-    <test started-at="2024-01-24T16:04:34Z" name="JaavascriptExecutorAndActions" finished-at="2024-01-24T16:06:30Z" duration-ms="116114">
-      <class name="actions_Interaction_Test.ActionTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:actions_Interaction_Test.ActionTest@7dc3712]" started-at="2024-01-24T21:34:54Z" name="setUp" finished-at="2024-01-24T21:35:07Z" duration-ms="12646" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="DragElemetFromSurceToDestination()[pri:1, instance:actions_Interaction_Test.ActionTest@7dc3712]" started-at="2024-01-24T21:35:07Z" name="DragElemetFromSurceToDestination" finished-at="2024-01-24T21:35:31Z" duration-ms="24274" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- DragElemetFromSurceToDestination -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:actions_Interaction_Test.ActionTest@7dc3712]" started-at="2024-01-24T21:35:31Z" name="afterMethod" finished-at="2024-01-24T21:35:34Z" duration-ms="3055" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:actions_Interaction_Test.ActionTest@7dc3712]" started-at="2024-01-24T21:36:09Z" name="setUp" finished-at="2024-01-24T21:36:16Z" duration-ms="7748" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="context_Or_RighClick()[pri:2, instance:actions_Interaction_Test.ActionTest@7dc3712]" started-at="2024-01-24T21:36:16Z" name="context_Or_RighClick" finished-at="2024-01-24T21:36:21Z" duration-ms="5203" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- context_Or_RighClick -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:actions_Interaction_Test.ActionTest@7dc3712]" started-at="2024-01-24T21:36:21Z" name="afterMethod" finished-at="2024-01-24T21:36:22Z" duration-ms="730" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:actions_Interaction_Test.ActionTest@7dc3712]" started-at="2024-01-24T21:36:22Z" name="setUp" finished-at="2024-01-24T21:36:29Z" duration-ms="6693" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="hoverWaitAndClick()[pri:9, instance:actions_Interaction_Test.ActionTest@7dc3712]" started-at="2024-01-24T21:36:29Z" name="hoverWaitAndClick" finished-at="2024-01-24T21:36:29Z" duration-ms="225" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- hoverWaitAndClick -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:actions_Interaction_Test.ActionTest@7dc3712]" started-at="2024-01-24T21:36:29Z" name="afterMethod" finished-at="2024-01-24T21:36:30Z" duration-ms="708" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-      </class> <!-- actions_Interaction_Test.ActionTest -->
-      <class name="javascriptExecutorTest.javascripexecutorsyntaxes">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:javascriptExecutorTest.javascripexecutorsyntaxes@565f390]" started-at="2024-01-24T21:34:34Z" name="setUp" finished-at="2024-01-24T21:34:54Z" duration-ms="20297" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="SignInThePage()[pri:1, instance:javascriptExecutorTest.javascripexecutorsyntaxes@565f390]" started-at="2024-01-24T21:35:34Z" name="SignInThePage" finished-at="2024-01-24T21:36:09Z" duration-ms="34316" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//a[text()='Sign in']"}
-  (Session info: chrome=109.0.5414.120)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.15.0', revision: '1d14b5521b'
 System info: os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '17.0.10'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [6212095dca60521d9c56c18584b8c7fa, findElement {using=xpath, value=//a[text()='Sign in']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.120, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: C:\Users\parag\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:62776}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62776/devtoo..., se:cdpVersion: 109.0.5414.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 6212095dca60521d9c56c18584b8c7fa]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//a[text()='Sign in']"}
-  (Session info: chrome=109.0.5414.120)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.15.0', revision: '1d14b5521b'
 System info: os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '17.0.10'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [6212095dca60521d9c56c18584b8c7fa, findElement {using=xpath, value=//a[text()='Sign in']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.120, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: C:\Users\parag\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:62776}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62776/devtoo..., se:cdpVersion: 109.0.5414.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 6212095dca60521d9c56c18584b8c7fa
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -114,11 +20,9 @@ Session ID: 6212095dca60521d9c56c18584b8c7fa
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:607)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:364)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:358)
-	at javascriptExecutorTest.javascripexecutorsyntaxes.SignInThePage(javascripexecutorsyntaxes.java:69)
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:472)
+	at Flash.FlashObjectWebDriver.callFlashObject(FlashObjectWebDriver.java:25)
+	at qa.FlashObject.FlashObjectTest.Guru99FlashobjectTest(FlashObjectTest.java:42)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -132,24 +36,15 @@ Session ID: 6212095dca60521d9c56c18584b8c7fa
 	at org.testng.TestRunner.privateRun(TestRunner.java:744)
 	at org.testng.TestRunner.run(TestRunner.java:602)
 	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
-	at org.testng.SuiteRunner.access$000(SuiteRunner.java:39)
-	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:414)
-	at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:842)
-]]>
+
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- org.openqa.selenium.JavascriptException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- SignInThePage -->
-        <test-method is-config="true" signature="TearDown()[pri:0, instance:javascriptExecutorTest.javascripexecutorsyntaxes@565f390]" started-at="2024-01-24T21:36:30Z" name="TearDown" finished-at="2024-01-24T21:36:30Z" duration-ms="189" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TearDown -->
-      </class> <!-- javascriptExecutorTest.javascripexecutorsyntaxes -->
-    </test> <!-- JaavascriptExecutorAndActions -->
-  </suite> <!-- seleniumstudy23Suite -->
+        </test-method> <!-- afterMethod -->
+      </class> <!-- qa.FlashObject.FlashObjectTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

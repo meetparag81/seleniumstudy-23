@@ -173,7 +173,7 @@ public class SelectTest {
 
 		}
 	}
-	@Test(priority=6,enabled=true)
+	@Test(priority=6,enabled=false)
 	public void SelectFirstOption() throws InterruptedException  {
 		driver.navigate().to("http://omayo.blogspot.com");
 		driver.manage().window().maximize();
@@ -190,6 +190,41 @@ public class SelectTest {
 
 		System.out.println("The firstSelected optionn this dropdown field is "+element.getText());
 
+	}
+	@Test (priority=7,enabled=true)
+	public void getAllSelectedOptions()
+	{
+		driver.navigate().to("http://omayo.blogspot.com/");
+		 //Write code here
+       WebElement dropdownField = driver.findElement(By.id("drop1"));
+       
+       Select select = new Select(dropdownField);
+        select.selectByVisibleText("doc 3");
+       
+       WebElement multiSelectionBoxField = driver.findElement(By.id("multiselect1"));
+       Select select2 = new Select(multiSelectionBoxField);
+      String  orignalstyle=multiSelectionBoxField.getAttribute("style");
+       js.executeScript("arguments[0].setAttribute('style', 'background:yellow; border:2px solid red;');",multiSelectionBoxField);
+        select2.selectByVisibleText("Audi");
+        select2.selectByVisibleText("Volvo");
+        select2.selectByVisibleText("Swift");
+        js.executeScript("arguments[0].setAttribute('style','" + orignalstyle + "');", multiSelectionBoxField);
+		WebElement multiselectionBoxField = driver.findElement(By.id("multiselect1"));
+
+		Select sel = new Select(multiselectionBoxField);
+		WebElement opt = sel.getFirstSelectedOption();
+		List<WebElement> opts = sel.getAllSelectedOptions();
+		int counter=0;
+		for (WebElement wb : opts) 
+		{
+			if(wb.getText().equals("Audi")||wb.getText().equals("Volvo")||wb.getText().equals("Swift")) 
+			{
+				System.out.println(wb.getText()+"is at index"+counter);
+				counter++;
+			}
+			
+			
+		}
 	}
 	
 	@AfterMethod

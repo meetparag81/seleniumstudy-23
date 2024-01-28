@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test(failed)">
     <classes>
-      <class name="orageHrm.OrageHrmTest">
+      <class name="windowHandleTest.HandleWindowTest">
         <methods>
-          <include name="orageHrmLoginTest"/>
+          <include name="hadleWindows"/>
           <include name="afterMethod"/>
           <include name="beforeMethod"/>
         </methods>
-      </class> <!-- orageHrm.OrageHrmTest -->
+      </class> <!-- windowHandleTest.HandleWindowTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
