@@ -145,6 +145,7 @@ public class ActionTestNew {
 		Thread.sleep(2000);
 		act.dragAndDropBy(element, -200, 0).build().perform();
 		Thread.sleep(2000);
+		
 	}
 	
 	// Use Tab from keyboard to navigate two  input boxes

@@ -1,1 +1,7 @@
 /target/
+*.properties
+.classpath
+.project
+/settings
+/test-output
+/Screenshots*
